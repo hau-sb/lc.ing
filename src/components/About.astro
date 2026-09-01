@@ -1,0 +1,81 @@
+---
+// src/components/About.astro
+---
+
+<style>
+  section {
+    padding: var(--spacing-2xl) var(--spacing-lg);
+    background-color: white;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-dark);
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: center;
+  }
+
+  .text {
+    line-height: 1.8;
+    color: #555;
+  }
+
+  .avatar {
+    width: 200px;
+    height: 200px;
+    background-color: var(--color-musgo);
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+
+  .highlight {
+    color: var(--color-musgo);
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    .content {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .avatar {
+      order: -1;
+    }
+  }
+</style>
+
+<section id="about">
+  <div class="container">
+    <h2>Sobre mí</h2>
+    <div class="content">
+      <div class="avatar"></div>
+      <div class="text">
+        <p>
+          Soy <span class="highlight">Luis Carlos Gómez</span>, especialista en asesoría de
+          homologación profesional con Engineers Australia. Con experiencia comprobada en múltiples
+          expedientes exitosos, he ayudado a ingenieros de todas las especialidades a alcanzar sus objetivos
+          profesionales en Australia.
+        </p>
+        <p>
+          Mi diferenciador: <span class="highlight">flexibilidad, atención personalizada y resultados rápidos</span>.
+          No somos agentes migratorios; nos enfocamos 100% en tu homologación profesional, adaptándonos a tus
+          tiempos y necesidades.
+        </p>
+        <p>
+          Casos urgentes en <span class="highlight">3 semanas</span>, casos promedio en <span class="highlight">6 semanas</span>.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
