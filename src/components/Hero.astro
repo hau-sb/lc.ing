@@ -1,0 +1,71 @@
+---
+// src/components/Hero.astro
+---
+
+<style>
+  section {
+    background: linear-gradient(135deg, rgba(90, 125, 111, 0.05) 0%, transparent 100%);
+    padding: var(--spacing-2xl) var(--spacing-lg);
+    text-align: center;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    max-width: 800px;
+  }
+
+  h1 {
+    margin-bottom: var(--spacing-md);
+    color: var(--color-dark);
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: var(--spacing-xl);
+    line-height: 1.8;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background-color: var(--color-musgo);
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 0.25rem;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+
+  .cta-button:hover {
+    background-color: #4a6d5f;
+  }
+
+  @media (max-width: 640px) {
+    section {
+      min-height: 350px;
+      padding: var(--spacing-xl) var(--spacing-md);
+    }
+
+    .subtitle {
+      font-size: 1rem;
+    }
+  }
+</style>
+
+<section id="hero">
+  <div class="container">
+    <h1>Asesoría en homologación de ingenierías</h1>
+    <p class="subtitle">
+      Experiencia comprobada, procesos flexibles y resultados en 3-6 semanas.
+      Todas las especialidades de ingeniería, tecnólogos y técnicos.
+    </p>
+    <a href="#contact" class="cta-button">Solicitar consulta</a>
+  </div>
+</section>
