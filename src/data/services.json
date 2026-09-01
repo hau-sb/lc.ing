@@ -1,0 +1,32 @@
+[
+  {
+    "step": 1,
+    "title": "Consulta Inicial",
+    "description": "Evaluamos tu perfil, experiencia y documentación inicial para entender tu caso específico."
+  },
+  {
+    "step": 2,
+    "title": "Asesoría Personalizada",
+    "description": "Te asesoramos sobre los requisitos exactos, brechas a cubrir y estrategia para tu homologación."
+  },
+  {
+    "step": 3,
+    "title": "Construcción del Expediente",
+    "description": "Organizamos toda tu documentación, transcripciones y evidencia de experiencia según los estándares de Engineers Australia."
+  },
+  {
+    "step": 4,
+    "title": "Redacción y Presentación",
+    "description": "Redactamos tu carta de motivación (Statement of Purpose) y otros documentos requeridos con precisión."
+  },
+  {
+    "step": 5,
+    "title": "Seguimiento",
+    "description": "Monitoreamos el proceso con Engineers Australia y te mantenemos informado de cada avance."
+  },
+  {
+    "step": 6,
+    "title": "Acompañamiento en Requerimientos",
+    "description": "Si hay requerimientos adicionales o preguntas, te asistimos hasta la conclusión del proceso."
+  }
+]
