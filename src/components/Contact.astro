@@ -1,0 +1,172 @@
+---
+// src/components/Contact.astro
+---
+
+<style>
+  section {
+    padding: var(--spacing-2xl) var(--spacing-lg);
+    background-color: var(--color-beige);
+  }
+
+  .container {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-dark);
+  }
+
+  .subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: var(--spacing-xl);
+  }
+
+  form {
+    background-color: white;
+    padding: var(--spacing-xl);
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .form-group {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-dark);
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    color: var(--color-dark);
+    transition: border-color 0.2s ease;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: none;
+    border-color: var(--color-musgo);
+    box-shadow: 0 0 0 3px rgba(90, 125, 111, 0.1);
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 150px;
+  }
+
+  button {
+    width: 100%;
+    background-color: var(--color-musgo);
+    color: white;
+    padding: 0.9rem;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+
+  button:hover {
+    background-color: #4a6d5f;
+  }
+
+  .form-message {
+    padding: var(--spacing-md);
+    margin-top: var(--spacing-md);
+    border-radius: 0.25rem;
+    text-align: center;
+    display: none;
+  }
+
+  .form-message.show {
+    display: block;
+  }
+
+  .form-message.success {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+  }
+
+  .form-message.error {
+    background-color: #ffebee;
+    color: #c62828;
+  }
+
+  @media (max-width: 640px) {
+    form {
+      padding: var(--spacing-lg);
+    }
+  }
+</style>
+
+<section id="contact">
+  <div class="container">
+    <h2>¿Tienes preguntas?</h2>
+    <p class="subtitle">Envíame un mensaje y te responderé en breve.</p>
+    <form name="contact" method="POST" data-netlify="true" netlify>
+      <input type="hidden" name="form-name" value="contact" />
+
+      <div class="form-group">
+        <label for="name">Nombre completo</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+
+      <div class="form-group">
+        <label for="type">Tipo de consulta</label>
+        <select id="type" name="type" required>
+          <option value="">-- Selecciona --</option>
+          <option value="consulta">Consulta general</option>
+          <option value="pregunta">Pregunta específica</option>
+          <option value="requerimiento">Requerimiento de proceso</option>
+          <option value="otro">Otro</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Mensaje</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+
+      <button type="submit">Enviar mensaje</button>
+
+      <div class="form-message success" id="successMessage">
+        ¡Mensaje enviado! Te responderé pronto.
+      </div>
+      <div class="form-message error" id="errorMessage">
+        Hubo un error. Por favor intenta nuevamente.
+      </div>
+    </form>
+  </div>
+</section>
+
+<script>
+  const form = document.querySelector('form');
+  const successMessage = document.getElementById('successMessage');
+  const errorMessage = document.getElementById('errorMessage');
+
+  form?.addEventListener('submit', (e) => {
+    // Vercel Forms maneja el envío automáticamente
+    // Aquí puedes agregar validación adicional si necesitas
+  });
+</script>
