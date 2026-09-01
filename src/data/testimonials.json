@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Juan Pérez",
+    "profession": "Ingeniero Civil",
+    "rating": 5,
+    "text": "Excelente asesoría, muy clara y objetiva. Luis Carlos fue muy paciente explicando cada paso del proceso. Recomendado 100%.",
+    "country": "Australia"
+  },
+  {
+    "id": 2,
+    "name": "María González",
+    "profession": "Ingeniera de Software",
+    "rating": 5,
+    "text": "Proceso rápido y eficiente. En 5 semanas ya tenía mi homologación aprobada. Muy profesional.",
+    "country": "Australia"
+  },
+  {
+    "id": 3,
+    "name": "Carlos López",
+    "profession": "Ingeniero Eléctrico",
+    "rating": 5,
+    "text": "La mejor decisión que tomé. Muy recomendable para quienes buscan homologarse en Australia.",
+    "country": "Australia"
+  }
+]
