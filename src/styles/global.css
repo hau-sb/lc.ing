@@ -46,10 +46,11 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
 }
 
-h1 { font-size: 2.5rem; }
-h2 { font-size: 2rem; }
-h3 { font-size: 1.5rem; }
-h4 { font-size: 1.25rem; }
+/* Mobile-first base: mobile sizes */
+h1 { font-size: 1.875rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.25rem; }
+h4 { font-size: 1rem; }
 
 p { margin-bottom: var(--spacing-md); }
 
@@ -69,8 +70,18 @@ button:hover {
   background-color: #4a6d5f;
 }
 
-@media (max-width: 640px) {
-  h1 { font-size: 1.875rem; }
-  h2 { font-size: 1.5rem; }
-  h3 { font-size: 1.25rem; }
+/* Tablet and up: 641px+ */
+@media (min-width: 641px) {
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.375rem; }
+  h4 { font-size: 1.125rem; }
+}
+
+/* Desktop and up: 1025px+ */
+@media (min-width: 1025px) {
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  h3 { font-size: 1.5rem; }
+  h4 { font-size: 1.25rem; }
 }
