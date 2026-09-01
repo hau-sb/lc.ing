@@ -6,11 +6,11 @@ import services from '../data/services.json';
 <style>
   section {
     padding: var(--spacing-2xl) var(--spacing-lg);
-    background-color: var(--color-beige);
+    background-color: var(--color-habano);
   }
 
   .container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
   }
 
@@ -20,52 +20,132 @@ import services from '../data/services.json';
     color: var(--color-dark);
   }
 
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: var(--spacing-lg);
+  .circular-process {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .service-card {
-    background-color: white;
-    padding: var(--spacing-lg);
-    border-radius: 0.25rem;
-    border-left: 4px solid var(--color-musgo);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    transition: box-shadow 0.2s ease;
+  .center-badge {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: var(--color-musgo);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-weight: 700;
+    font-size: 0.85rem;
+    z-index: 10;
   }
 
-  .service-card:hover {
-    box-shadow: 0 4px 12px rgba(90, 125, 111, 0.1);
+  .services-circle {
+    position: relative;
+    width: 100%;
+    height: 100%;
   }
 
-  .step-number {
+  .service-item {
+    position: absolute;
+    width: 140px;
+    text-align: center;
+  }
+
+  .service-item:nth-child(1) {
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .service-item:nth-child(2) {
+    top: 15%;
+    right: 5%;
+  }
+
+  .service-item:nth-child(3) {
+    top: 55%;
+    right: 2%;
+  }
+
+  .service-item:nth-child(4) {
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .service-item:nth-child(5) {
+    top: 55%;
+    left: 2%;
+  }
+
+  .service-item:nth-child(6) {
+    top: 15%;
+    left: 5%;
+  }
+
+  .step-badge {
     display: inline-block;
     background-color: var(--color-musgo);
     color: white;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2.2rem;
+    height: 2.2rem;
     border-radius: 50%;
     text-align: center;
-    line-height: 2.5rem;
+    line-height: 2.2rem;
     font-weight: 700;
-    margin-bottom: var(--spacing-md);
+    font-size: 0.9rem;
+    margin-bottom: var(--spacing-sm);
   }
 
-  .service-card h3 {
-    margin-bottom: var(--spacing-md);
-    color: var(--color-dark);
-  }
-
-  .service-card p {
+  .service-item h3 {
     font-size: 0.95rem;
-    color: #666;
-    line-height: 1.7;
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-dark);
+    font-weight: 600;
+  }
+
+  .service-item p {
+    font-size: 0.8rem;
+    color: #555;
+    line-height: 1.4;
+    margin-bottom: 0;
   }
 
   @media (max-width: 768px) {
-    .services-grid {
-      grid-template-columns: 1fr;
+    .circular-process {
+      max-width: 100%;
+      aspect-ratio: auto;
+      height: auto;
+      display: block;
+      padding: var(--spacing-lg) 0;
+    }
+
+    .services-circle {
+      position: static;
+      height: auto;
+    }
+
+    .service-item {
+      position: static !important;
+      width: 100%;
+      margin-bottom: var(--spacing-lg);
+      transform: none !important;
+      padding: var(--spacing-md);
+      background-color: white;
+      border-radius: 0.25rem;
+      border-left: 4px solid var(--color-musgo);
+    }
+
+    .center-badge {
+      display: none;
     }
   }
 </style>
@@ -73,14 +153,29 @@ import services from '../data/services.json';
 <section id="services">
   <div class="container">
     <h2>El Proceso</h2>
-    <div class="services-grid">
-      {services.map((service) => (
-        <div class="service-card">
-          <div class="step-number">{service.step}</div>
-          <h3>{service.title}</h3>
-          <p>{service.description}</p>
-        </div>
-      ))}
+    <div class="circular-process">
+      <div class="center-badge">Flujo Continuo</div>
+      <svg style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;">
+        <circle cx="50%" cy="50%" r="40%" fill="none" stroke="#5a7d6f" stroke-width="1" opacity="0.2" />
+        <path d="M 50% 10% Q 80% 30%, 90% 55%" stroke="#5a7d6f" stroke-width="1.5" fill="none" opacity="0.3" marker-end="url(#arrowhead)" />
+        <path d="M 90% 55% Q 80% 80%, 50% 90%" stroke="#5a7d6f" stroke-width="1.5" fill="none" opacity="0.3" marker-end="url(#arrowhead)" />
+        <path d="M 50% 90% Q 20% 80%, 10% 55%" stroke="#5a7d6f" stroke-width="1.5" fill="none" opacity="0.3" marker-end="url(#arrowhead)" />
+        <path d="M 10% 55% Q 20% 30%, 50% 10%" stroke="#5a7d6f" stroke-width="1.5" fill="none" opacity="0.3" marker-end="url(#arrowhead)" />
+        <defs>
+          <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+            <polygon points="0 0, 10 3, 0 6" fill="#5a7d6f" opacity="0.5" />
+          </marker>
+        </defs>
+      </svg>
+      <div class="services-circle">
+        {services.map((service) => (
+          <div class="service-item">
+            <div class="step-badge">{service.step}</div>
+            <h3>{service.title}</h3>
+            <p>{service.description}</p>
+          </div>
+        ))}
+      </div>
     </div>
   </div>
 </section>

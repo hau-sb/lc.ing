@@ -1,15 +1,15 @@
 /* src/styles/global.css */
 :root {
   --color-musgo: #5a7d6f;
-  --color-beige: #f5f1e8;
+  --color-habano: #c9a961;
   --color-dark: #2b2b2b;
   --color-light: #fafaf8;
-  --spacing-xs: 0.5rem;
-  --spacing-sm: 1rem;
-  --spacing-md: 1.5rem;
-  --spacing-lg: 2rem;
-  --spacing-xl: 3rem;
-  --spacing-2xl: 4rem;
+  --spacing-xs: 0.35rem;
+  --spacing-sm: 0.75rem;
+  --spacing-md: 1.1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2.2rem;
+  --spacing-2xl: 3rem;
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
 }
 
@@ -21,10 +21,10 @@
 
 html {
   font-family: var(--font-sans);
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.6;
   color: var(--color-dark);
-  background-color: var(--color-beige);
+  background-color: var(--color-habano);
 }
 
 body {
