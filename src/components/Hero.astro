@@ -4,67 +4,104 @@
 
 <style>
   section {
-    background: linear-gradient(135deg, rgba(90, 125, 111, 0.05) 0%, transparent 100%);
-    padding: var(--spacing-2xl) var(--spacing-lg);
+    background: linear-gradient(135deg, var(--color-navy) 0%, #0f2634 100%);
+    padding: var(--spacing-3xl) var(--spacing-lg);
     text-align: center;
-    min-height: 500px;
+    min-height: 520px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -100px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(0, 188, 212, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
   }
 
   .container {
-    max-width: 800px;
+    max-width: 900px;
+    position: relative;
+    z-index: 1;
   }
 
   h1 {
     margin-bottom: var(--spacing-md);
-    color: var(--color-dark);
+    color: var(--color-white);
+    font-size: 2.8rem;
+    line-height: 1.15;
+    font-weight: 700;
+  }
+
+  .highlight {
+    color: var(--color-cyan);
+    font-weight: 700;
   }
 
   .subtitle {
-    font-size: 1.2rem;
-    color: #666;
-    margin-bottom: var(--spacing-xl);
+    font-size: 1.15rem;
+    color: #b0d4dd;
+    margin-bottom: var(--spacing-2xl);
     line-height: 1.8;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .cta-button {
     display: inline-block;
-    background-color: var(--color-musgo);
+    background-color: var(--color-orange);
     color: white;
-    padding: 0.8rem 2rem;
-    border-radius: 0.25rem;
+    padding: 0.95rem 2.5rem;
+    border-radius: 0;
     font-weight: 600;
     font-size: 1rem;
     border: none;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: all 0.3s ease;
   }
 
   .cta-button:hover {
-    background-color: #4a6d5f;
+    background-color: #e55a24;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(255, 107, 53, 0.2);
+  }
+
+  .cta-button:focus-visible {
+    outline: 2px solid var(--color-cyan);
+    outline-offset: 2px;
   }
 
   @media (max-width: 640px) {
     section {
-      min-height: 350px;
-      padding: var(--spacing-xl) var(--spacing-md);
+      min-height: 420px;
+      padding: var(--spacing-2xl) var(--spacing-md);
+    }
+
+    h1 {
+      font-size: 2rem;
     }
 
     .subtitle {
       font-size: 1rem;
+      margin-bottom: var(--spacing-xl);
     }
   }
 </style>
 
 <section id="hero">
   <div class="container">
-    <h1>Asesoría en homologación de ingenierías</h1>
+    <h1>Homologación de <span class="highlight">ingenierías</span></h1>
     <p class="subtitle">
-      Experiencia comprobada, procesos flexibles y resultados en 3-6 semanas.
-      Todas las especialidades de ingeniería, tecnólogos y técnicos.
+      Certificación con Engineers Australia. Experiencia comprobada, procesos flexibles y resultados en 3-6 semanas. Todas las especialidades.
     </p>
     <a href="#contact" class="cta-button">Solicitar consulta</a>
   </div>

@@ -4,8 +4,8 @@
 
 <style>
   section {
-    padding: var(--spacing-2xl) var(--spacing-lg);
-    background-color: var(--color-beige);
+    padding: var(--spacing-3xl) var(--spacing-lg);
+    background-color: var(--color-white);
   }
 
   .container {
@@ -15,21 +15,23 @@
 
   h2 {
     text-align: center;
-    margin-bottom: var(--spacing-lg);
-    color: var(--color-dark);
+    margin-bottom: var(--spacing-md);
+    color: var(--color-navy);
+    font-size: 2.2rem;
   }
 
   .subtitle {
     text-align: center;
-    color: #666;
-    margin-bottom: var(--spacing-xl);
+    color: #888;
+    margin-bottom: var(--spacing-2xl);
+    font-size: 1.05rem;
   }
 
   form {
-    background-color: var(--color-light);
-    padding: var(--spacing-xl);
-    border-radius: 0.25rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    background-color: var(--color-light-gray);
+    padding: var(--spacing-2xl);
+    border-radius: 0;
+    border-left: 4px solid var(--color-cyan);
   }
 
   .form-group {
@@ -38,60 +40,68 @@
 
   label {
     display: block;
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: var(--spacing-sm);
-    color: var(--color-dark);
+    color: var(--color-navy);
+    font-size: 0.95rem;
   }
 
   input,
   select,
   textarea {
     width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #ddd;
-    border-radius: 0.25rem;
+    padding: 0.85rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 0;
     font-family: var(--font-sans);
     font-size: 1rem;
-    color: var(--color-dark);
-    transition: border-color 0.2s ease;
+    color: var(--color-charcoal);
+    transition: all 0.2s ease;
   }
 
   input:focus,
   select:focus,
   textarea:focus {
     outline: none;
-    border-color: var(--color-musgo);
-    box-shadow: 0 0 0 3px rgba(90, 125, 111, 0.1);
+    border-color: var(--color-cyan);
+    box-shadow: 0 0 0 3px rgba(0, 188, 212, 0.1);
   }
 
   textarea {
     resize: vertical;
-    min-height: 150px;
+    min-height: 160px;
   }
 
   button {
     width: 100%;
-    background-color: var(--color-musgo);
+    background-color: var(--color-orange);
     color: white;
-    padding: 0.9rem;
+    padding: 1rem;
     font-weight: 600;
     font-size: 1rem;
     border: none;
-    border-radius: 0.25rem;
+    border-radius: 0;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: all 0.2s ease;
   }
 
   button:hover {
-    background-color: #4a6d5f;
+    background-color: #e55a24;
+    transform: translateY(-2px);
+  }
+
+  button:focus-visible {
+    outline: 2px solid var(--color-cyan);
+    outline-offset: 2px;
   }
 
   .form-message {
     padding: var(--spacing-md);
     margin-top: var(--spacing-md);
-    border-radius: 0.25rem;
+    border-radius: 0;
     text-align: center;
     display: none;
+    font-weight: 600;
   }
 
   .form-message.show {
@@ -101,16 +111,18 @@
   .form-message.success {
     background-color: #e8f5e9;
     color: #2e7d32;
+    border-left: 4px solid #4caf50;
   }
 
   .form-message.error {
     background-color: #ffebee;
     color: #c62828;
+    border-left: 4px solid #f44336;
   }
 
   @media (max-width: 640px) {
     form {
-      padding: var(--spacing-lg);
+      padding: var(--spacing-xl);
     }
   }
 </style>
